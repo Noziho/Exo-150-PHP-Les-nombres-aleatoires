@@ -5,15 +5,17 @@
  */
 
 // TODO Votre code ici.
-
-
+$myRdm = rand(0, 50);?>
+<div><?= $myRdm ?></div>
 
 /**
  * 2. Générez un nombre aléatoire compris entre 50 et getrandmax, affichez le résultat dans un nouveau <p>
  */
 
 // TODO Votre code ici.
-
+<?php
+$myRdm2 = rand(50, getrandmax());?>
+<div><?= $myRdm2 ?></div>
 
 /**
  * 3. Générez un nombre aléatoire compris entre 0 et 50
@@ -22,7 +24,14 @@
  */
 
 // TODO Votre code ici.
-
+<?php
+$myRdm3 = rand(0, 50);
+if ($myRdm3 <=25) {?>
+    <p>Vous avez gagné</p><?php
+}
+else {?>
+    <p>Vous avez perdu</p><?php
+}
 
 /**
  * 4. Créez une fonction qui génère un nombre aléatoire compris entre $max et $min ( paramètres ).
@@ -31,8 +40,17 @@
  */
 
 // TODO Votre code ici.
+function getRandom (int $min, int $max):int {
+    $myRandom = rand($min , $max);
+    if ($myRandom >= $max && $myRandom < $max -100) {
+        getRandom($min, $max);
 
+    }
 
+    return$myRandom;
+
+}
+echo getRandom(50, 2100);
 
 
 
